@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from nonebot import on_command, CommandSession
 import requests
+import json
 
 @on_command('weather', aliases=('天气', '天气预报', '查天气'))
 async def weather(session: CommandSession):
@@ -21,4 +22,6 @@ async def _(session: CommandSession):
 
 async def get_weather_of_city(city: str) -> str:
     weather = requests.get(url="http://wthrcdn.etouch.cn/weather_mini?city="+city).text
+    weather = json.loads(weather)
+    weather = weather["data"]["forecast"][0]
     return f'{city}的天气是……\n{weather}'
