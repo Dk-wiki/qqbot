@@ -25,5 +25,11 @@ async def get_weather_of_city(city: str) -> str:
     if "invilad-citykey" in weather:
         return "没有这个城市呢~"
     weather = json.loads(weather)
-    weather = weather["data"]["forecast"][0]
-    return f'{city}的天气是……\n{weather}'
+    #weather = weather["data"]["forecast"][0]
+    Data = weather["data"]["forecast"][0]["date"]  #22日星期五
+    High = weather["data"]["forecast"][0]["high"][3:]
+    fengli = weather["data"]["forecast"][0]["fengli"][9:][:-3:]
+    low = weather["data"]["forecast"][0]["low"][3:]
+    fengxiang = weather["data"]["forecast"][0]["fengxiang"]
+    type1 = weather["data"]["forecast"][0]["type"]
+    return f'{Data}->{city}\n最高气温{High},最低气温{low}\n{type1},有{fengli}{fengxiang}'
