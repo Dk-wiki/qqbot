@@ -5,4 +5,4 @@ SUPERUSERS = {891896315}
 COMMAND_START = ['', re.compile(r'[/!]+')]
 HOST = '0.0.0.0'
 PORT = 1010
-NICKNAME {'bot','嘤嘤嘤'}
+NICKNAME = {'bot','嘤嘤嘤'}
