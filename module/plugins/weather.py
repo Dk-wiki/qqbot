@@ -20,5 +20,5 @@ async def _(session: CommandSession):
     session.state[session.current_key] = stripped_arg
 
 async def get_weather_of_city(city: str) -> str:
-    weather = requests.get(url="http://wthrcdn.etouch.cn/weather_mini?city="+city).content.decode("utf-8")
+    weather = requests.get(url="http://wthrcdn.etouch.cn/weather_mini?city="+city).text
     return f'{city}的天气是……\n{weather}'
