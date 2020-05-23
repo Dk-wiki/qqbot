@@ -10,4 +10,5 @@ if __name__ == '__main__':
          path.join(path.dirname(__file__), 'module', 'plugins'),
         'module.plugins'
     )
+    nonebot.load_builtin_plugins()
     nonebot.run()
