@@ -33,6 +33,8 @@ async def get_fund_of_code(code: str) -> str:
         t3 = requests.get(url=url.format(fund_yfd,time_stamp)).text
         j3 = json.loads(t3[8:][:-2])
         return f'{j1["jzrq"]}\n{j1["name"]}-> {j1["gszzl"]}%\n{j2["name"]}-> {j2["gszzl"]}%\n{j3["name"]}-> {j3["gszzl"]}%\n截止时间{j1["gztime"]}'
+    elif 'ygg' in code:
+        return f'你也配🐴？'
     else:
         t1 = requests.get(url=url.format(code,time_stamp)).text
         j1 = json.loads(t1[8:][:-2])
