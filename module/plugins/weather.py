@@ -20,7 +20,7 @@ async def _(session: CommandSession):
         session.pause('要查询的城市名称不能为空呢，请重新输入')
     session.state[session.current_key] = stripped_arg
 
-async def get_weatfher_of_city(city: str) -> str:
+async def get_weather_of_city(city: str) -> str:
     weather = requests.get(url="http://wthrcdn.etouch.cn/weather_mini?city="+city).text
     if "invilad-citykey" in weather:
         return "没有这个城市呢~"
